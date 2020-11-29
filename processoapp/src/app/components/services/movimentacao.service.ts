@@ -2,13 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { Beneficiario } from '../model/beneficiario.model';
+import { Movimentacao } from '../model/movimentacao.model';
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class BeneficiarioService{
+export class MovimentacaoService{
 
     baseUrl = 'http://localhost:52670/api/'
 
@@ -23,8 +23,12 @@ export class BeneficiarioService{
     }
     
 
-    create(beneficiario : Beneficiario): Observable<Beneficiario>{
-        return this.http.post<Beneficiario>(this.baseUrl, beneficiario)
+    create(movimentacao : Movimentacao): Observable<Movimentacao>{
+        return this.http.post<Movimentacao>(this.baseUrl + "movimentacao", movimentacao)
+    }
+
+    read(): Observable<Movimentacao>{
+        return this.http.get<Movimentacao>(this.baseUrl + "movimentacao")
     }
 
 }

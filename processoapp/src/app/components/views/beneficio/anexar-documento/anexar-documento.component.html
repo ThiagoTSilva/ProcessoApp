@@ -1,0 +1,24 @@
+<mat-card class="documento mat-elevation-z3">
+    <mat-card-title class="title">Anexar Documento</mat-card-title>
+    <form class="form">
+        <mat-form-field>
+            <input matInput placeholder="Matricula" [(ngModel)]="documento.Matricula" name="Matricula">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select [(ngModel)]="documento.Categoria" name="Categoria">
+                <mat-option value="Identificação">Identificação</mat-option>
+                <mat-option value="Vida Funcional">Vida Funcional</mat-option>
+                <mat-option value="Contagem de tempo">Contagem de tempo</mat-option>
+                <mat-option value="Remuneração/ Proventos">Remuneração/ Proventos</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="div-file">
+            <input type="file" 
+                    (change)="onChange($event)" 
+                    name="Arquivo"/>
+        </div>
+    </form>
+    <button mat-raised-button (click)="createAnexo()" color="primary" >
+        Salvar
+    </button>
+</mat-card>

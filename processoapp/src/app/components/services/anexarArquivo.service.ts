@@ -2,15 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { Beneficiario } from '../model/beneficiario.model';
+import { Documento } from '../model/documento.model';
+
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class BeneficiarioService{
+export class AnexarArquivoService{
 
-    baseUrl = 'http://localhost:52670/api/'
+    baseUrl= "http://localhost:52670/api/anexar-documentos";
 
     constructor(private snackBar: MatSnackBar, private http: HttpClient){}
 
@@ -23,8 +24,8 @@ export class BeneficiarioService{
     }
     
 
-    create(beneficiario : Beneficiario): Observable<Beneficiario>{
-        return this.http.post<Beneficiario>(this.baseUrl, beneficiario)
+    create(documento : Documento): Observable<Documento>{
+        return this.http.post<Documento>(this.baseUrl, documento)
     }
 
 }

@@ -1,27 +1,64 @@
 <mat-card class="beneficio mat-elevation-z3">
     <mat-card-title class="title">Beneficio de aposentadoria</mat-card-title>
-    <form class="form">
+    <form class="form" >
+        <div class="div-matricula">
+            <mat-form-field>
+                <input 
+                    id="matricula"
+                    matInput 
+                    placeholder="Matricula"
+                    [(ngModel)]="beneficio.beneficiario.Matricula"
+                    name="Matricula">
+
+            </mat-form-field>
+                <a>
+                    <button mat-raised-button (click)="buscarBeneficio()" color="primary">
+                        <i class="material-icons">
+                            search
+                        </i>
+                    </button>
+                </a>
+        </div>
         <mat-form-field >
-            <input matInput placeholder="Nome completo">
+            <input 
+                id="nome"
+                matInput 
+                placeholder="Nome completo"
+                [(ngModel)]="beneficio.beneficiario.Nome"
+                name="Nome" />
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Cpf">
+            <input 
+                id="cpf"
+                matInput 
+                placeholder="Cpf"
+                [(ngModel)]="beneficio.beneficiario.Cpf"
+                name="Cpf">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Orgão">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Matricula">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-select>
-                <mat-option value="1">Tempo de trabalho</mat-option>
-                <mat-option value="2">Aposentadoria por idade</mat-option>
-                <mat-option value="3">Invalidez</mat-option>
-            </mat-select>
-        </mat-form-field>
+        <div class="div-form">
+            <mat-form-field>
+                <input 
+                    id="orgao"
+                    matInput 
+                    placeholder="Orgão"
+                    [(ngModel)]="beneficio.beneficiario.Orgao"
+                    name="Orgao">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select [(ngModel)]="beneficio.DescricaoTipoBeneficio" 
+                            name="TipoBeneficio"
+                            id="tipoBeneficio">
+                    <mat-option value="1">Tempo de trabalho</mat-option>
+                    <mat-option value="2">Aposentadoria por idade</mat-option>
+                    <mat-option value="3">Invalidez</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
     </form>
-    <button mat-raised-button color="primary">
+    <button mat-raised-button (click)="createBeneficio()" color="primary">
+        <i class="material-icons">
+            save
+        </i>
         Salvar
     </button>
 </mat-card>

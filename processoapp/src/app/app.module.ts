@@ -26,6 +26,10 @@ import { CadastroComponent } from './components/views/cadastro/cadastro.componen
 
 import { FormsModule } from'@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AnexarDocumentoComponent } from './components/views/beneficio/anexar-documento/anexar-documento.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -37,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     BeneficioComponent,
     MovimentacaoComponent,
-    CadastroComponent
+    CadastroComponent,
+    AnexarDocumentoComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

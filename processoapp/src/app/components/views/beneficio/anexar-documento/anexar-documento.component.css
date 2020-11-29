@@ -1,8 +1,9 @@
-.cadastro {
+.documento {
     background-color: rgb(220, 220, 220);
+    height: 400px;
 }
 
-.cadastro .title {
+.documento .title {
     font-size: 1rem;
     font-weight: 450;
     line-height: 1.1;
@@ -10,11 +11,11 @@
 }
 
 .form {
-     display: flex;
-     flex-direction: column;
-     height: 350px;
+    display: flex;
+    width: 300px;
+    flex-direction: column;
 }
 
-.form mat-form-field {
-    width: 500px;
+.div-file {
+    margin-bottom: 30px;
 }

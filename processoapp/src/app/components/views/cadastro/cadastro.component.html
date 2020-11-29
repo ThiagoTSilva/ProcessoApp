@@ -2,16 +2,32 @@
     <mat-card-title class="title">Cadastro Servidor</mat-card-title>
     <form class="form">
         <mat-form-field >
-            <input matInput placeholder="Nome completo">
+            <input 
+                matInput 
+                placeholder="Nome completo"
+                [(ngModel)] = "beneficiario.Nome"
+                name="Nome">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Cpf">
+            <input 
+                matInput 
+                placeholder="Cpf"
+                [(ngModel)]="beneficiario.Cpf"
+                name="Cpf">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Orgão">
+            <input 
+                matInput 
+                placeholder="Orgão"
+                [(ngModel)]="beneficiario.Orgao"
+                name="Orgao">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Matricula">
+            <input 
+                matInput 
+                placeholder="Matricula"
+                [(ngModel)]="beneficiario.Matricula"
+                name="Matricula">
         </mat-form-field>
     </form>
     <button mat-raised-button (click)="createBeneficiario()" color="primary">

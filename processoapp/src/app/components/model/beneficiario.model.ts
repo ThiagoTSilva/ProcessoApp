@@ -1,5 +1,5 @@
 export interface Beneficiario{
-    Id: number
+    Id?: number
     Nome: string
     Cpf : string
     Orgao : string

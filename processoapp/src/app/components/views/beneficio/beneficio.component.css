@@ -1,5 +1,6 @@
 .beneficio {
     background-color: rgb(220, 220, 220);
+    height: 400px;
 }
 
 .beneficio .title {
@@ -12,4 +13,14 @@
 .form {
     display: flex;
     flex-direction: column;
+    height: 340px;
+}
+
+.div-matricula mat-form-field {
+    width: 300px;
+}
+
+.div-form mat-form-field{
+    margin-right: 20px;
+    width: 200px;
 }

@@ -9,3 +9,21 @@
     color: rgb(128,128,128);
 }
 
+.form {
+     display: flex;
+     flex-direction: column;
+}
+
+.form mat-form-field {
+    width: 500px;
+}
+
+.save-button {
+    margin-right: 5px;
+}
+
+table {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
