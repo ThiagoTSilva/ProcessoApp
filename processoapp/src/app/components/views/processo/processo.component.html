@@ -1,0 +1,22 @@
+<mat-card class="processo mat-elevation-z3">
+    <mat-card-title class="title">Processo</mat-card-title>
+    <form class="form">
+        <mat-form-field>
+            <input 
+                id="matricula"
+                matInput 
+                placeholder="Matricula"
+                [(ngModel)]="beneficio.beneficiario.Matricula"
+                name="Matricula"/>
+
+        </mat-form-field>
+    </form>
+    <a>
+        <button mat-raised-button (click)="search()" color="primary">
+            <i class="material-icons">
+                search
+            </i>
+            pesquisar
+        </button>
+    </a>
+</mat-card>

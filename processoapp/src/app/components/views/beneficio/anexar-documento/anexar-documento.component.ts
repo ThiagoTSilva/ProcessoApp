@@ -27,7 +27,7 @@ export class AnexarDocumentoComponent implements OnInit {
   createAnexo() {
     this.documento.Arquivo = this.arraByte[0]
     this.anexarArquivoService.create(this.documento).subscribe(() => {
-      this.anexarArquivoService.showOnConsole("Anexo salvo com sucesso");
+      this.anexarArquivoService.showOnConsole("Item anexado com sucesso. ");
       this.router.navigate(["/beneficio"])
     });
   }
@@ -36,7 +36,7 @@ export class AnexarDocumentoComponent implements OnInit {
 
     const files = event.target.files[0];
     this.getBase64(files).then(
-      d => this.arraByte.push(d)
+      data => this.arraByte.push(data)
     );   
   }
 

@@ -3,13 +3,12 @@
     <form class="form" >
         <div class="div-matricula">
             <mat-form-field>
+                <label>Matricula: </label>
                 <input 
                     id="matricula"
                     matInput 
-                    placeholder="Matricula"
                     [(ngModel)]="beneficio.beneficiario.Matricula"
                     name="Matricula">
-
             </mat-form-field>
                 <a>
                     <button mat-raised-button (click)="buscarBeneficio()" color="primary">
@@ -20,29 +19,33 @@
                 </a>
         </div>
         <mat-form-field >
+            <label>Nome: </label>
             <input 
+                class="input-nome"
                 id="nome"
                 matInput 
-                placeholder="Nome completo"
                 [(ngModel)]="beneficio.beneficiario.Nome"
-                name="Nome" />
+                name="Nome" >
+                {{servidor.nome}}
         </mat-form-field>
         <mat-form-field>
+            <label>Cpf: </label>
             <input 
                 id="cpf"
                 matInput 
-                placeholder="Cpf"
                 [(ngModel)]="beneficio.beneficiario.Cpf"
                 name="Cpf">
+                {{servidor.cpf}}
         </mat-form-field>
         <div class="div-form">
             <mat-form-field>
+                <label>Orgão: </label>
                 <input 
                     id="orgao"
                     matInput 
-                    placeholder="Orgão"
                     [(ngModel)]="beneficio.beneficiario.Orgao"
                     name="Orgao">
+                    {{servidor.orgao}}
             </mat-form-field>
             <mat-form-field>
                 <mat-select [(ngModel)]="beneficio.DescricaoTipoBeneficio" 

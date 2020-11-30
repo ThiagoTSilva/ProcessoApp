@@ -14,7 +14,7 @@ export class BeneficioComponent implements OnInit {
 
   beneficio : Beneficio = {
       beneficiario : {
-        Matricula : 0,
+        Matricula : '',
         Cpf: '',
         Nome: '',
         Orgao:''

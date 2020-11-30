@@ -30,6 +30,7 @@ import { AnexarDocumentoComponent } from './components/views/beneficio/anexar-do
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { ProcessoComponent } from './components/views/processo/processo.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { MatSortModule } from '@angular/material/sort';
     MovimentacaoComponent,
     CadastroComponent,
     AnexarDocumentoComponent,
+    ProcessoComponent,
   ],
   imports: [
     BrowserModule,

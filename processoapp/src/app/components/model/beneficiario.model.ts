@@ -3,5 +3,5 @@ export interface Beneficiario{
     Nome: string
     Cpf : string
     Orgao : string
-    Matricula : number
+    Matricula : string
 }

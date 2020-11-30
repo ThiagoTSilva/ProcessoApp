@@ -16,7 +16,7 @@ export class MovimentacaoComponent implements OnInit {
     Destino: '',
     Origem: '',
     Acao:'',
-    UsuarioId: 0,
+    UsuarioId: 12345,
     DataTramitacao: ''
   }
 
