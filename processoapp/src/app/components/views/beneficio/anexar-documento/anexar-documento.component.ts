@@ -16,7 +16,6 @@ export class AnexarDocumentoComponent implements OnInit {
     Matricula: ''
   }
 
-  arraByte = []
 
   constructor(private anexarArquivoService: AnexarArquivoService,
     private router: Router) { }
@@ -25,23 +24,22 @@ export class AnexarDocumentoComponent implements OnInit {
   }
 
   createAnexo() {
-    this.documento.Arquivo = this.arraByte[0]
     this.anexarArquivoService.create(this.documento).subscribe(() => {
       this.anexarArquivoService.showOnConsole("Item anexado com sucesso. ");
       this.router.navigate(["/beneficio"])
     });
   }
 
-  onChange(event: { target: { files: any[]; }; }) {
-
+  onChange(event: any) {
     const files = event.target.files[0];
     this.getBase64(files).then(
-      data => this.arraByte.push(data)
-    );   
+      data => {
+          console.log(data);
+      });
   }
 
 
-   getBase64(file: Blob) {
+  getBase64(file: Blob) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);

@@ -3,7 +3,7 @@
     <form class="form" >
         <div class="div-matricula">
             <mat-form-field>
-                <label>Matricula: </label>
+                <label>Matricula </label>
                 <input 
                     id="matricula"
                     matInput 
@@ -19,7 +19,7 @@
                 </a>
         </div>
         <mat-form-field >
-            <label>Nome: </label>
+            <label>Nome </label>
             <input 
                 class="input-nome"
                 id="nome"
@@ -39,7 +39,7 @@
         </mat-form-field>
         <div class="div-form">
             <mat-form-field>
-                <label>Orgão: </label>
+                <label>Orgão </label>
                 <input 
                     id="orgao"
                     matInput 
@@ -48,12 +48,21 @@
                     {{servidor.orgao}}
             </mat-form-field>
             <mat-form-field>
+                <label>Tipo Beneficio </label>
+                <input 
+                *ngIf="servidor.descricaoTipoBeneficio !== ''"
+                matInput 
+                name="TipoBeneficio"
+                id="tipoBeneficio"/>
+                {{servidor.descricaoTipoBeneficio}}
+
                 <mat-select [(ngModel)]="beneficio.DescricaoTipoBeneficio" 
                             name="TipoBeneficio"
-                            id="tipoBeneficio">
-                    <mat-option value="1">Tempo de trabalho</mat-option>
-                    <mat-option value="2">Aposentadoria por idade</mat-option>
-                    <mat-option value="3">Invalidez</mat-option>
+                            id="tipoBeneficio" 
+                            *ngIf ="servidor.descricaoTipoBeneficio === ''">
+                    <mat-option value="Tempo de trabalho">Tempo de trabalho</mat-option>
+                    <mat-option value="Aposentadoria por idade">Aposentadoria por idade</mat-option>
+                    <mat-option value="Aposentadoria por idade">Invalidez</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>

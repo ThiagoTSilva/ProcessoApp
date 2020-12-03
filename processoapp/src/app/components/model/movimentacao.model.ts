@@ -1,8 +1,8 @@
 export interface Movimentacao{
     Id?: number
-    Origem : string 
+    Origem: string 
     Destino: string
     UsuarioId: number
     Acao: string
-    DataTramitacao? : string
+    DataTramitacao : string
 }

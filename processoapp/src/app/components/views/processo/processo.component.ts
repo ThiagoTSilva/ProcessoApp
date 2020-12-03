@@ -11,7 +11,7 @@ export class ProcessoComponent implements OnInit {
 
   beneficio : Beneficio = {
     beneficiario : {
-      Matricula : 0,
+      Matricula : "",
       Cpf: '',
       Nome: '',
       Orgao:''
@@ -31,11 +31,16 @@ export class ProcessoComponent implements OnInit {
     })
   }
 
-  returnBlob(data: BlobPart){
-    var file = new Blob([data], {type: 'application/pdf'});
-    var url = window.URL.createObjectURL(file);
-    console.log(url)
-    return url;
+  returnBlob(data: string){
+    var pdfInBase64 = new Uint8Array(atob('iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==').split('').map(char => char.charCodeAt(0)));
+    var file = new Blob([pdfInBase64], {type: 'application/pdf'});
+
+    console.log(file)
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+      window.navigator.msSaveOrOpenBlob(file);
+    }
+    
+    return window.URL.createObjectURL(file);
   }
 
 }

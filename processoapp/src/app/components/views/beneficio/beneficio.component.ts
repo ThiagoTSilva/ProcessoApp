@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 })
 export class BeneficioComponent implements OnInit {
 
- servidor! : Beneficio;
-
   beneficio : Beneficio = {
       beneficiario : {
         Matricula : '',
@@ -21,6 +19,16 @@ export class BeneficioComponent implements OnInit {
       },
       DescricaoTipoBeneficio: ''
   }
+
+  servidor : Beneficio= {
+    beneficiario : {
+      Matricula : '',
+      Cpf: '',
+      Nome: '',
+      Orgao:''
+    },
+    DescricaoTipoBeneficio: ''
+}
 
   constructor(private beneficioService : BeneficioService,
               private router: Router) { }
@@ -37,6 +45,7 @@ export class BeneficioComponent implements OnInit {
 
   buscarBeneficio() : void {
     this.beneficioService.read(this.beneficio).subscribe( response =>{
+        console.log(response)
         this.servidor = response
     })
   }

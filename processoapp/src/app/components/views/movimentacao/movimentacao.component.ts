@@ -8,15 +8,21 @@ import { MovimentacaoService } from '../../services/movimentacao.service'
   styleUrls: ['./movimentacao.component.css']
 })
 export class MovimentacaoComponent implements OnInit {
-
-  pesquisa! : Movimentacao;
   displayedColumns = ['dataTramitacao','origem','destino','usuario','acao'];
 
   movimentacao : Movimentacao = {
     Destino: '',
     Origem: '',
     Acao:'',
-    UsuarioId: 12345,
+    UsuarioId: 0,
+    DataTramitacao: ''
+  }
+
+  pesquisa: Movimentacao = {
+    Destino: '',
+    Origem: '',
+    Acao:'',
+    UsuarioId: 0,
     DataTramitacao: ''
   }
 
@@ -33,8 +39,8 @@ export class MovimentacaoComponent implements OnInit {
 
   search() : void {
     this.movimentacaoService.read().subscribe( response => {
-      this.pesquisa = response;
-      console.log(this.pesquisa)
+      this.pesquisa = response
+
     });
   }
 

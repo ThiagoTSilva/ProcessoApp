@@ -25,6 +25,7 @@ export class BeneficioService{
     
 
     create(beneficio : Beneficio): Observable<Beneficio>{
+        console.log(beneficio)
         return this.http.post<Beneficio>( this.baseUrl + "cadastrar-beneficio", beneficio)
     }
 

@@ -11,7 +11,7 @@ export class CadastroComponent implements OnInit {
 
   beneficiario : Beneficiario = {
       Nome:"",
-      Matricula: 0,
+      Matricula: "",
       Cpf:"",
       Orgao:"",
   }

@@ -30,7 +30,7 @@
             Pesquisar
         </button>
     </div>
-    <div class="mat-elevation-z4">
+    <div class="mat-elevation-z4"> 
         <table mat-table [dataSource]="pesquisa">
 
             <ng-container matColumnDef="dataTramitacao">
@@ -59,13 +59,6 @@
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-            <mat-paginator #paginator
-                [lenght]="dataSource?.data.lenght"
-                [pageIndex]="0"
-                [pageSize]="10"
-                [pageSizeOptions]="[5,10,50]">
-            </mat-paginator>
 
         </table>
     </div>
